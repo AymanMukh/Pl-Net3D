@@ -1,6 +1,13 @@
 # PL-Net3D: Robust 3D Object Class Recognition Using Geometric Models
 
-## Introducstion
+
+### Citation
+```
+@misc{
+}
+```
+
+### Introducstion
 
 Three-dimensional point clouds produced by 3D scanners are often noisy and contains
 outliers. Such data inaccuracies can significantly affect the recent deep learning based methods and reduce
@@ -17,10 +24,10 @@ state-of-the-art techniques. By decomposing objects into planes, the suggested m
 able to provide good classification accuracy, and can handle different kinds of point cloud data inaccuracies.
 We provide the code to the community to support future works in this area
 
-## Requirements:
+### Requirements:
 
-Matlab.
-Pointnet, please refer to the orignal code for information about running the netwrok.
+* Matlab.
+* Pointnet, please refer to the orignal code for information about running the netwrok.
 
 ### Usage
 
@@ -42,7 +49,7 @@ After optaining the .m files from the above step. run the main.m file to extract
 #### Planar geometries usage in PointNet
 
 The following modifications should be done in PointNet:
-The number of points in PointNet should be set to the number of planes (20 default).
+* The number of points in PointNet should be set to the number of planes (20 default).
 Each planar geometiry is represneted by a vector of size 11 (default),  therefore in 'pointnet_cls.py':
 In the placeholder_inputs class, the size should be set to 11 instead of 3.
 In the get_model class, replace the 'point_cloud_transformed vaiable' with: 
