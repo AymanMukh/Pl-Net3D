@@ -95,7 +95,7 @@ rotated_data = np.append(rotated_data,rotated_data2, axis = 2)
 
 ### Training and testing
 
-For training the netwrok, we generated the following three sets of training data with the following properties:
+For training the netwrok, we generated three sets of the training data with the following properties:
 ```
 distance threshold 0.08,  normal threshold 0.3
 distance threshold 0.08,  normal threshold 0.1
