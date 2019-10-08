@@ -64,7 +64,7 @@ The following modifications should be done in PointNet:
     point_cloud_transformed=tf.concat(axis=2, values=[point_cloud[:,:,0:1],point_cloud_transformed1,point_cloud[:,:,4:8],point_cloud_transformed2])
 
 ```
-* The size of the fist conv2d needs o be 11 instead of 3
+* The size of the fist conv2d needs to be 11 instead of 3
 
 * The rotate data classes in provider.py should be modified as follows:  
 ```
@@ -101,7 +101,7 @@ distance threshold 0.08,  normal threshold 0.3
 distance threshold 0.08,  normal threshold 0.1
 distance threshold 0.08,  normal threshold 0.3, at noise level of .01
 ```
-while for testing, we used the test data with the following properties:
+While for testing, we used the test data with the following properties:
 ```
 distance threshold 0.08,  normal threshold 0.3
 ```
