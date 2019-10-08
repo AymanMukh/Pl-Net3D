@@ -99,7 +99,7 @@ For training the netwrok, we generated the following three sets of training data
 ```
 distance threshold 0.08,  normal threshold 0.3
 distance threshold 0.08,  normal threshold 0.1
-distance threshold 0.08,  normal threshold 0.3 at noise level of .01
+distance threshold 0.08,  normal threshold 0.3, at noise level of .01
 ```
 while for testing, we used the test data with the following properties:
 ```
