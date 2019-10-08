@@ -44,12 +44,12 @@ unzip modelnet40_ply_hdf5_2048.zip
 ```
 And then run the file 'convert_h5_m.m' to convert the h5 files to .m files, one training and one testing file will be generated.
 
-#### Extract Planar geometries
+#### Extracting planar geometris
 
-After optaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it wil generate one testing and one training h5 files which are then used as an input to PointNet.
+After obtaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it wil generate one testing and one training h5 files which will be used as an input to PointNet.
 
 
-#### Planar geometries usage in PointNet
+#### Using the extracted planar geometris for object classification in PoinNet
 
 The following modifications should be done in PointNet:
 * The number of points in PointNet should be set to the number of planes (20 default).
@@ -92,5 +92,18 @@ rotated_data = np.append(rotated_data,batch_data[:,:,4:8], axis = 2)
 rotated_data = np.append(rotated_data,rotated_data2, axis = 2)
 ```
 * The 'jitter_point' command in the training file is not required ( jittering is done in the matlab part.)
+
+### Training and testing
+
+For training the netwrok, we generated the following three sets of training data with the following properties:
+```
+distance threshold 0.08,  normal threshold 0.3
+distance threshold 0.08,  normal threshold 0.1
+distance threshold 0.08,  normal threshold 0.3 at noise level of .01
+```
+while for testing, we used the test data with the following properties:
+```
+distance threshold 0.08,  normal threshold 0.3
+```
 
 
