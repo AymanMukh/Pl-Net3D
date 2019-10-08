@@ -19,8 +19,8 @@ We provide the code to the community to support future works in this area
 
 ## Requirements:
 
-Matlab
-Pointnet, please refer to the orignal code for information about running the netwrok
+Matlab.
+Pointnet, please refer to the orignal code for information about running the netwrok.
 
 ### Usage
 
@@ -42,7 +42,7 @@ After optaining the .m files from the above step. run the main.m file to extract
 #### Planar geometries usage in PointNet
 
 The following modifications should be done in PointNet:
-The number of points in PointNet should be set to the number of planes (20 default)
+The number of points in PointNet should be set to the number of planes (20 default).
 Each planar geometiry is represneted by a vector of size 11 (default),  therefore in 'pointnet_cls.py':
 In the placeholder_inputs class, the size should be set to 11 instead of 3.
 In the get_model class, replace the 'point_cloud_transformed vaiable' with: 
@@ -81,6 +81,6 @@ rotated_data = np.append(batch_data[:,:,0:1],rotated_data1, axis = 2)
 rotated_data = np.append(rotated_data,batch_data[:,:,4:8], axis = 2) 
 rotated_data = np.append(rotated_data,rotated_data2, axis = 2)
 ```
-jitter_point command in the training file is not required ( jittering is done in the matlab part.)
+The 'jitter_point' command in the training file is not required ( jittering is done in the matlab part.)
 
 
