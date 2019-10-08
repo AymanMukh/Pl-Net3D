@@ -29,7 +29,7 @@ In order to run this project you need the following:
 * Matlab.
 * Pointnet, please refer to the orignal code for information about running the netwrok.
 
-We used matlab for he extraction of its planar primitives from a given point cloud, while we used PointNet for classification of the given object from the extracted planar data. 
+We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification of the given object from the extracted planar data. 
 
 
 ### Usage
