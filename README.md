@@ -51,8 +51,8 @@ After optaining the .m files from the above step. run the main.m file to extract
 The following modifications should be done in PointNet:
 * The number of points in PointNet should be set to the number of planes (20 default).
 * Each planar geometiry is represneted by a vector of size 11 (default),  therefore in 'pointnet_cls.py':
-** In the placeholder_inputs class, the size should be set to 11 instead of 3.
-** In the get_model class, replace the 'point_cloud_transformed vaiable' with: 
+* In the placeholder_inputs class, the size should be set to 11 instead of 3.
+* In the get_model class, replace the 'point_cloud_transformed vaiable' with: 
 
 ```
     point_cloud_transformed1=tf.matmul(point_cloud[:,:,1:4], transform)  
@@ -61,7 +61,7 @@ The following modifications should be done in PointNet:
     point_cloud_transformed=tf.concat(axis=2, values=[point_cloud[:,:,0:1],point_cloud_transformed1,point_cloud[:,:,4:8],point_cloud_transformed2])
 
 ```
-** The size of the fist conv2d needs o be 11 instead of 3
+* The size of the fist conv2d needs o be 11 instead of 3
 
 * The rotate data classes in provider.py should be modified as follows:  
 ```
