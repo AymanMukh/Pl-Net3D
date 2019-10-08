@@ -7,7 +7,7 @@
 }
 ```
 
-### Introducstion
+### Introduction
 
 Three-dimensional point clouds produced by 3D scanners are often noisy and contains
 outliers. Such data inaccuracies can significantly affect the recent deep learning based methods and reduce
@@ -27,7 +27,7 @@ We provide the code to the community to support future works in this area
 ### Requirements:
 In order to run this project you need the following:
 * Matlab.
-* Pointnet, please refer to the orignal code for information about running the netwrok.
+* Pointnet, please refer to the original code for information about running the network.
 
 We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification of the given object from the extracted planar data. 
 
@@ -42,18 +42,18 @@ cd data
 wget --no-check-certificate https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip
 unzip modelnet40_ply_hdf5_2048.zip
 ```
-And then run the file 'convert_h5_m.m' to convert the h5 files to .m files. One trainingand one testing file will be gernerated
+And then run the file 'convert_h5_m.m' to convert the h5 files to .m files, one training and one testing file will be generated.
 
 #### Extract Planar geometries
 
-After optaining the .m files from the above step. run the main.m file to extract planar geometries from objects. After the codes finish, it wil generate one testing and one training h5 files which are then used as an input to PointNet.
+After optaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it wil generate one testing and one training h5 files which are then used as an input to PointNet.
 
 
 #### Planar geometries usage in PointNet
 
 The following modifications should be done in PointNet:
 * The number of points in PointNet should be set to the number of planes (20 default).
-* Each planar geometiry is represneted by a vector of size 11 (default),  therefore in 'pointnet_cls.py':
+* Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py':
 * In the placeholder_inputs class, the size should be set to 11 instead of 3.
 * In the get_model class, replace the 'point_cloud_transformed vaiable' with: 
 
