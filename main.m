@@ -1,6 +1,6 @@
 %-----------------------------------------------------------
 % Finds planes in Point cloud
-% auther: ayman mukhaimer
+% author: ayman mukhaimer
 % Oct 2019
 %-----------------------------------------------------------
 
