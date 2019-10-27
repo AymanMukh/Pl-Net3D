@@ -9,12 +9,7 @@ function collect_data(folder,outputname,files_number)
 %  
 %
 %  output: save planes parameters of all objects to h5 file
-
-
-
-
-
-
+%%
 shape_names = {'airplane','bathtub','bed','bench','bookshelf','bottle','bowl','car','chair','cone',...
         'cup','curtain','desk','door','dresser','flower_pot','glass_box','guitar','keyboard','lamp',...
         'laptop','mantel','monitor' 'night_stand','person','piano','plant','radio','range_hood','sink',...

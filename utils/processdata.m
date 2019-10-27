@@ -1,14 +1,15 @@
 function processdata(data,start,ending,label,folder)
 
-%%  fit planes to given 3D data, extract plane properties 
+%%  fit planes to given 3D data and extract plane properties 
 %  
 %       input:
 %  data: 3D data (n*3), where n is the number of points
 %  normals: input points normals (n*3), where n is the number of points
 %  start: starting position from the given data
 %  start: ending position from the given data
+%  folder: folder name where output files will be stored
 %
-%  output: save planes parameters to files on local hard drive
+%  output: save planes parameters in the given folder
 
 
 for j= start:ending % length(label)
@@ -18,8 +19,7 @@ file=strcat(folder,num2str(j));
 
 points=data(:,:,j);
 
-% find points normals
-
+%find points normals
 %  ptCloud=pointCloud(points');
 %  normals = pcnormals(ptCloud,50)'; 
 [ normals ,~ ] = normal(points',.25);  % 'k', 50 
@@ -51,7 +51,7 @@ normals=normals';
         planes_Dim(q,:)=[median(inl_points(inl_points(:,1)<0,1)),median(inl_points(inl_points(:,1)>0,1)),median(inl_points(inl_points(:,2)<0,2)),median(inl_points(inl_points(:,2)>0,2))];
 
         q=q+1;
-%         filtered_points=[filtered_points,points(:,inl)];
+
         points(:,inl)=[];
         normals(:,inl)=[];
         
@@ -84,7 +84,7 @@ normals=normals';
          
         shap=label(j);
         save(file,'fr');
-%         save(file,'filtered_points','-append');
+
         save(file,'shap','-append');
         save(file,'planesnorm','-append');
         save(file,'planes','-append'); 

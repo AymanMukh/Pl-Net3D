@@ -1,6 +1,12 @@
 function data=noise(data,noiselevel)
+%-----------------------------------------------------------
+% Generate noise in the given data
+% input:
+% data:  input data points (batch*n*3), where n is the number of points
+% noiselevel: noise percentage
+%-----------------------------------------------------------
 
-for j=1:length(data(1,1,:)) %1:length(data(1,1,:))
+for j=1:length(data(1,1,:)) 
 
 All_points=data(:,:,j);
 

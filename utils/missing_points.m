@@ -1,7 +1,12 @@
 function data=missing_points(data,missing_point_ratio) 
+%-----------------------------------------------------------
+% Apply random points dropout
+% input:
+% data:  input data points (batch*n*3), where n is the number of points
+% missing_point_ratio: percentage of points to be removed
+%-----------------------------------------------------------
 
-
-for j=1:length(data(1,1,:)) %1:length(data(1,1,:))
+for j=1:length(data(1,1,:))
 
 All_points=data(:,:,j);
 n=fix(length(All_points)*(1-missing_point_ratio));

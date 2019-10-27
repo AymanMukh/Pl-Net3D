@@ -8,14 +8,13 @@ function [plane,inliers]=planefit(points,normals,Threshold,Angle_Threshold,itera
 %  Threshold: allowed threshold or space around the plane for points to be
 %  considered as inliers
 %  Angle_Threshold: allowed angle difference threshold between points and
-%  the plane 
-%  iteration: number of iterations to stop loking for plane with max number
-%  of points
-%
+%  the plane in Euclidean distance
+%  iteration: number of iterations 
+%  
 %
 %  output:
-%  plane: palne equation parameters
-%  inliers: inlier points
+%  plane: plane equation 
+%  inliers: inlier points indices
 
 %%
      nu=length(points(1,:));  
@@ -23,7 +22,7 @@ function [plane,inliers]=planefit(points,normals,Threshold,Angle_Threshold,itera
      plane=[];
      
      k=0;
-
+     % generate kd -tree
      Mdl = KDTreeSearcher(points');
      IdxNN = knnsearch(Mdl,points','K',9); 
 
@@ -45,13 +44,13 @@ function [plane,inliers]=planefit(points,normals,Threshold,Angle_Threshold,itera
                     d1 = abs(p'*normal+d);
                     
                     if d1<=Threshold
-                       if (abs(n(1)-normal(1))<Angle_Threshold && abs(n(2)-normal(2))<Angle_Threshold && abs(n(3)-normal(3))<Angle_Threshold) || (abs(-n(1)-normal(1))<Angle_Threshold && abs(-n(2)-normal(2))<Angle_Threshold && abs(-n(3)-normal(3))<Angle_Threshold)
+                       if   max(min(abs(normal- n)<Angle_Threshold) , min( abs(-normal- n)<Angle_Threshold )) % (abs(n(1)-normal(1))<Angle_Threshold && abs(n(2)-normal(2))<Angle_Threshold && abs(n(3)-normal(3))<Angle_Threshold) || (abs(-n(1)-normal(1))<Angle_Threshold && abs(-n(2)-normal(2))<Angle_Threshold && abs(-n(3)-normal(3))<Angle_Threshold)
                          I=[I,i];
                        end
-                       
+                     
                     end
             end
-                    if length(inliers)< length(I) % && planeDensity(All_points(:,I))>150
+                    if length(inliers)< length(I)
                         inliers=I;     plane=[normal' d];    
                     end
               
