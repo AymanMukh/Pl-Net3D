@@ -15,7 +15,7 @@ function [plane,inliers]=planefit(points,normals,Threshold,Angle_Threshold,itera
 %  output:
 %  plane: plane equation 
 %  inliers: inlier points indices
-%  auther: ayman mukhaimer
+%  author: ayman mukhaimer
 %  Oct 2019
 
 %%
