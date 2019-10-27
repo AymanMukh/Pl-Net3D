@@ -1,6 +1,6 @@
 function processdata(data,start,ending,label,folder)
-
-%%  fit planes to given 3D data and extract plane properties 
+% ------------------------------------------------------------------------------
+%  fit planes to given 3D data and extract plane properties 
 %  
 %       input:
 %  data: 3D data (n*3), where n is the number of points
@@ -10,8 +10,11 @@ function processdata(data,start,ending,label,folder)
 %  folder: folder name where output files will be stored
 %
 %  output: save planes parameters in the given folder
+% auther: ayman mukhaimer
+% Oct 2019
+% ------------------------------------------------------------------------------
 
-
+%%
 for j= start:ending % length(label)
 
 disp(j)
