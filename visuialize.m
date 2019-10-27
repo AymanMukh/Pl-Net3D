@@ -1,12 +1,15 @@
+%-----------------------------------------------------------
+% Visualize extracted planes
+% change the shape number and shape starting points below
+%-----------------------------------------------------------
+
 clear
 close all
 
 addpath('./utils','./data');
 
-load('data/test_data','data')  % MN40_10K
+load('data/test_data','data')  
 load('data/test_data','label')
-%  load('data/test_data','data')
-%  load('data/test_data','label')
 
 shape_names = {'airplane','bathtub','bed','bench','bookshelf','bottle','bowl','car','chair','cone',...
         'cup','curtain','desk','door','dresser','flower_pot','glass_box','guitar','keyboard','lamp',...
@@ -15,8 +18,8 @@ shape_names = {'airplane','bathtub','bed','bench','bookshelf','bottle','bowl','c
 
 
 %% 
-% select shape to visualize
-shape=39; 
+% select shape to visualize (from 0 to 39)
+shape=0; 
 % select shape starting point
 seq=1;
 
@@ -25,7 +28,7 @@ current_shape=1;
 
 for j=1:length(label)
  
-if   any(label(j)==shape) %  label1==shape 
+if   any(label(j)==shape) 
     
 
  if current_shape<seq
@@ -36,24 +39,22 @@ if   any(label(j)==shape) %  label1==shape
 disp(j)
      points=data(:,:,j);
 
-            %% add outliers , noise , or missing points
+%% add outliers , noise , or missing points
 %         points=noise(points,.08);
 %     points=outliers(points,.5,[-1 1]);
 %       points=missing_points(points,.9);
 %    points=pseduo_outliers1(points,.2,.05);
 %         points=cluster_outliers(points,.2,10,.04);
- %% find points normals
+%% find points normals
  [ normals_c , curvature ] = normal( points',.2);  % 'k', 50 
  normals_c=normals_c';
 
-%  quiver3(points(1,:),points(2,:),points(3,:),normals_c(1,:),normals_c(2,:),normals_c(3,:));   
-
-%   ptCloud=pointCloud(points');
+ %   ptCloud=pointCloud(points');
 %   normals_c = pcnormals(ptCloud,80)';
 
  %% draw shape
  figure
-   scatter3(points(1,:),points(2,:),points(3,:),'.');
+%  scatter3(points(1,:),points(2,:),points(3,:),'.');
     quiver3(points(1,:),points(2,:),points(3,:),normals_c(1,:),normals_c(2,:),normals_c(3,:));     
 % view(8,-70.6) 
 view(180,-70.6) 
@@ -62,8 +63,7 @@ ylabel('y')
 zlabel('z')
 axis equal   
 grid off
-%  label1=find(shape_names==label(j))-1; 
-% title(shape_names(label1+1))
+title(shape_names(label(j)+1))
 
 
  %% find planes in shape    
@@ -78,8 +78,8 @@ grid off
         if ~isempty(inl)  
           hold on
           scatter3(points(1,inl),points(2,inl),points(3,inl));
-            axis equal   
-% grid off
+         
+
         fr(q)=single(length(inl)/nuu);
         planes(q,:)=single(plane);
         planesnorm(q,:)=single(plane(1:3)./norm(plane(1:3)));
@@ -105,7 +105,7 @@ grid off
 
         end
    hold off
-%     set(gca,'visible','off')
+%  set(gca,'visible','off')
    
     if current_shape>=seq
      break

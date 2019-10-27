@@ -1,9 +1,8 @@
+%-----------------------------------------------------------
+% Converts h5 files into .m files
+%-----------------------------------------------------------
 
-addpath('/home/ayman/papers/pointnet2-master/data/modelnet40_ply_hdf5_2048/')
-
-
-
-
+addpath('data/modelnet40_ply_hdf5_2048/')
 
 filename1='ply_data_train0.h5';
 % h5disp(filename1);

@@ -1,5 +1,5 @@
 
-addpath('/home/ayman/papers/pointnet2-master/data/modelnet40_ply_hdf5_2048/')
+addpath('data/modelnet40_ply_hdf5_2048/')
 addpath('./utils','./moduls','./data');
 
 filename1='test_file_miss_50.h5';
