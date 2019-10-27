@@ -10,8 +10,8 @@ function processdata(data,start,ending,label,folder)
 %  folder: folder name where output files will be stored
 %
 %  output: save planes parameters in the given folder
-% auther: ayman mukhaimer
-% Oct 2019
+%  author: ayman mukhaimer
+%  Oct 2019
 % ------------------------------------------------------------------------------
 
 %%
