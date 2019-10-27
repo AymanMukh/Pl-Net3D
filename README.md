@@ -27,7 +27,7 @@ We provide the code to the community to support future works in this area
 ### Requirements:
 In order to run this project you need the following:
 * Matlab.
-* [PointNet](https://github.com/charlesq34/pointnet), please refer to the original code for information about running the network.
+* [PointNet](https://github.com/charlesq34/pointnet), please refer to the original code for information about running their code.
 
 We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification of the given object from the extracted planar data. 
 
