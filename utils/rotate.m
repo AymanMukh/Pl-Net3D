@@ -1,14 +1,12 @@
 function data=rotate(data,phi,theta,n1,n2,n3)
-% Rotate
-    data=data';
-%     phi=deg2rad(phi);theta=deg2rad(theta);
-%  scatter3(data(1,:),data(2,:),data(3,:));
-% xlabel('My x label')
-% ylabel('y')
-% zlabel('zz')
-% axis equal
-
+%
 % https://au.mathworks.com/matlabcentral/answers/400250-rotation-matrix-3d-point-data
+% apply pca and rotate points into x-y axis
+%
+%
+
+% Rotate
+data=data';
 P=data;
 x = P(:,1) ; y = P(:,2) ;z = P(:,3) ; % get (x,y,z) coordinate  
  x0 = x-mean(x) ; y0 = y-mean(y) ; z0 = z-mean(z) ; % remove mean 
@@ -35,4 +33,3 @@ R=[e2;e1;e3];  % rotation matrix , match with xyz (e1//n2, e2//n1, e3//n3)
 % hold on;scatter3(HA(:,1),HA(:,2),HA(:,3),'g.');%just for better visualaztion
 % legend('original data(P)','rotated data(newdata)');title({'Plot the rotation matrix 3D point data';'(FINAL RESULT)'});
 data=newdata1;
-
