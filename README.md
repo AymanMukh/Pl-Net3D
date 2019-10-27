@@ -106,4 +106,5 @@ While for testing, we used the test data with the following properties:
 distance threshold 0.08,  normal threshold 0.3
 ```
 
-
+### License
+This repository is released under MIT License.
