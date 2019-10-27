@@ -27,7 +27,7 @@ We provide the code to the community to support future works in this area
 ### Requirements:
 In order to run this project you need the following:
 * Matlab.
-* Pointnet, please refer to the original code for information about running the network.
+* [PointNet](https://github.com/charlesq34/pointnet), please refer to the original code for information about running the network.
 
 We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification of the given object from the extracted planar data. 
 
@@ -51,7 +51,7 @@ After obtaining the .m files from the above step, run the main.m file to extract
 
 #### Using the extracted planar geometris for object classification in PoinNet
 
-The following modifications should be done in PointNet:
+The following modifications should be done in [PointNet](https://github.com/charlesq34/pointnet):
 * The number of points in PointNet should be set to the number of planes (20 default).
 * Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py':
 * In the placeholder_inputs class, the size should be set to 11 instead of 3.
