@@ -9,7 +9,7 @@ sys.path.append(os.path.join(BASE_DIR, '../utils'))
 import tf_util
 
 def placeholder_inputs(batch_size, num_point):
-    pointclouds_pl = tf.placeholder(tf.float32, shape=(batch_size, num_point, 3))
+    pointclouds_pl = tf.placeholder(tf.float32, shape=(batch_size, num_point, 11))
     labels_pl = tf.placeholder(tf.int32, shape=(batch_size))
     return pointclouds_pl, labels_pl
 
@@ -22,7 +22,7 @@ def get_model(point_cloud, is_training, bn_decay=None):
     input_image = tf.expand_dims(point_cloud, -1)
     
     # Point functions (MLP implemented as conv2d)
-    net = tf_util.conv2d(input_image, 64, [1,3],
+    net = tf_util.conv2d(input_image, 64, [1,11],
                          padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training,
                          scope='conv1', bn_decay=bn_decay)
