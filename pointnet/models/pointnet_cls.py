@@ -10,7 +10,7 @@ import tf_util
 from transform_nets import input_transform_net, feature_transform_net
 
 def placeholder_inputs(batch_size, num_point):
-    pointclouds_pl = tf.placeholder(tf.float32, shape=(batch_size, num_point, 3))
+    pointclouds_pl = tf.placeholder(tf.float32, shape=(batch_size, num_point, 11))
     labels_pl = tf.placeholder(tf.int32, shape=(batch_size))
     return pointclouds_pl, labels_pl
 
@@ -23,10 +23,15 @@ def get_model(point_cloud, is_training, bn_decay=None):
 
     with tf.variable_scope('transform_net1') as sc:
         transform = input_transform_net(point_cloud, is_training, bn_decay, K=3)
-    point_cloud_transformed = tf.matmul(point_cloud, transform)
+    
+    point_cloud_transformed1=tf.matmul(point_cloud[:,:,1:4], transform)  
+    tt=tf.matrix_inverse(transform)
+    point_cloud_transformed2 = tf.matmul(point_cloud[:,:,8:11],tt, transpose_b=True)  
+    point_cloud_transformed=tf.concat(axis=2, values=[point_cloud[:,:,0:1],
+                                                      point_cloud_transformed1,point_cloud[:,:,4:8],point_cloud_transformed2])
     input_image = tf.expand_dims(point_cloud_transformed, -1)
 
-    net = tf_util.conv2d(input_image, 64, [1,3],
+    net = tf_util.conv2d(input_image, 64, [1,11],
                          padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training,
                          scope='conv1', bn_decay=bn_decay)
