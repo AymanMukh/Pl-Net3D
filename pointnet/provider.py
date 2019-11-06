@@ -38,7 +38,11 @@ def rotate_point_cloud(batch_data):
         Return:
           BxNx3 array, rotated batch of point clouds
     """
-    rotated_data = np.zeros(batch_data.shape, dtype=np.float32)
+    batch_data1=batch_data[:, :, 1:4]
+    batch_data2=batch_data[:, :, 8:11]
+
+    rotated_data1= np.zeros(batch_data1.shape, dtype=np.float32)
+    rotated_data2= np.zeros(batch_data2.shape, dtype=np.float32)
     for k in range(batch_data.shape[0]):
         rotation_angle = np.random.uniform() * 2 * np.pi
         cosval = np.cos(rotation_angle)
@@ -46,8 +50,16 @@ def rotate_point_cloud(batch_data):
         rotation_matrix = np.array([[cosval, 0, sinval],
                                     [0, 1, 0],
                                     [-sinval, 0, cosval]])
-        shape_pc = batch_data[k, ...]
-        rotated_data[k, ...] = np.dot(shape_pc.reshape((-1, 3)), rotation_matrix)
+        normal_rotation_matrix=np.transpose(np.linalg.inv(rotation_matrix))
+                 
+        shape_pc1 = batch_data1[k, ...]                            
+        shape_pc2 = batch_data2[k, ...]
+        rotated_data1[k, ...] = np.matmul(shape_pc1.reshape((-1, 3)), rotation_matrix)
+        rotated_data2[k, ...] = np.matmul(shape_pc2.reshape((-1, 3)), normal_rotation_matrix)
+        
+    rotated_data = np.append(batch_data[:,:,0:1],rotated_data1, axis = 2)
+    rotated_data = np.append(rotated_data,batch_data[:,:,4:8], axis = 2) 
+    rotated_data = np.append(rotated_data,rotated_data2, axis = 2)
     return rotated_data
 
 
@@ -58,16 +70,28 @@ def rotate_point_cloud_by_angle(batch_data, rotation_angle):
         Return:
           BxNx3 array, rotated batch of point clouds
     """
-    rotated_data = np.zeros(batch_data.shape, dtype=np.float32)
+    batch_data1=batch_data[:, :, 1:4]
+    batch_data2=batch_data[:, :, 8:11]
+
+    rotated_data1= np.zeros(batch_data1.shape, dtype=np.float32)
+    rotated_data2= np.zeros(batch_data2.shape, dtype=np.float32)
     for k in range(batch_data.shape[0]):
-        #rotation_angle = np.random.uniform() * 2 * np.pi
+        # rotation_angle = np.random.uniform() * 2 * np.pi
         cosval = np.cos(rotation_angle)
         sinval = np.sin(rotation_angle)
         rotation_matrix = np.array([[cosval, 0, sinval],
                                     [0, 1, 0],
                                     [-sinval, 0, cosval]])
-        shape_pc = batch_data[k, ...]
-        rotated_data[k, ...] = np.dot(shape_pc.reshape((-1, 3)), rotation_matrix)
+        normal_rotation_matrix=np.transpose(np.linalg.inv(rotation_matrix))
+                 
+        shape_pc1 = batch_data1[k, ...]                            
+        shape_pc2 = batch_data2[k, ...]
+        rotated_data1[k, ...] = np.matmul(shape_pc1.reshape((-1, 3)), rotation_matrix)
+        rotated_data2[k, ...] = np.matmul(shape_pc2.reshape((-1, 3)), normal_rotation_matrix)
+        
+    rotated_data = np.append(batch_data[:,:,0:1],rotated_data1, axis = 2)
+    rotated_data = np.append(rotated_data,batch_data[:,:,4:8], axis = 2) 
+    rotated_data = np.append(rotated_data,rotated_data2, axis = 2)
     return rotated_data
 
 
