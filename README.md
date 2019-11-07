@@ -49,21 +49,20 @@ unzip modelnet40_ply_hdf5_2048.zip
 ```
 And then run the file 'convert_h5_m.m' to convert the h5 files to .m files, one training and one testing file will be generated.
 
+### Training and testing
+
 #### Extracting planar geometris
 
 After obtaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it will generate one testing and one training h5 files which will be used as an input to PointNet.
 The thersholds can be modified at line 37 from the 'processdata.m' file.
 The max number of planes can be modified at line 63 from the 'processdata.m' file.
 
-#### Using the extracted planar geometris for object classification in PoinNet
+#### Using the extracted planar geometris in PoinNet
 
-The following modifications are done in [PointNet](https://github.com/charlesq34/pointnet):
-* The number of points in PointNet is set to the number of planes (20 default).
-* Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py': The placeholder_inputs class, the size should be set to 11 instead of 3. In the get_model class, The size of the fist conv2d is set to 11 instead of 3
-* The rotate data classes in provider.py is modified   
-* The 'jitter_point' command in the training file is not required ( jittering is done in the matlab part.)
-
-### Training and testing
+After obtaining the training and testing h5 files from the above step, add thier path to the text files in pointnet/data/modelnet40_ply_hdf5_2048. Then run the train file in pointnet folder:
+```
+python train.py
+```
 
 To achieve similar results as reported in the paper, three sets of the training data should be generated with the following properties:
 ```
@@ -76,8 +75,16 @@ While for testing, we used the test data with the following properties:
 distance threshold 0.08,  normal threshold 0.3
 ```
 
+
+
+
 ### Acknowledgement
-We used [PointNet](https://github.com/charlesq34/pointnet) with slight modifications mentioned above.
+We used [PointNet](https://github.com/charlesq34/pointnet) with the following modifications:
+
+* The number of points in PointNet is set to the number of planes (20 default).
+* Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py': The placeholder_inputs class, the size should be set to 11 instead of 3. In the get_model class, The size of the fist conv2d is set to 11 instead of 3
+* The rotate data classes in provider.py is modified   
+* The 'jitter_point' command in the training file is not required ( jittering is done in the matlab part.)
 
 ### License
 This repository is released under MIT License.
