@@ -8,7 +8,7 @@
 ```
 
 
-![main pic](https://github.com/AymanMukh/Pl-Net3D/architicture.png){:height="50%" width="50%"}
+![main pic](architicture.png){:height="50%" width="50%"}
 
 
 ### Introduction
