@@ -8,7 +8,7 @@
 ```
 
 
-![main](https://github.com/AymanMukh/Pl-Net3D/architicture.png)
+![main](https://drive.google.com/open?id=1Voyp0JSC5uMY2osxXPzPLupOSpB0-52H)
 
 
 ### Introduction
