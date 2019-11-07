@@ -8,7 +8,7 @@
 ```
 
 
-![main](https://github.com/charlesq34/pointnet/blob/master/doc/teaser.png)
+![main](https://github.com/AymanMukh/Pl-Net3D/architicture.png)
 
 
 ### Introduction
