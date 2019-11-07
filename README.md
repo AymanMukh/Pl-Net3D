@@ -25,11 +25,11 @@ able to provide good classification accuracy, and can handle different kinds of 
 We provide the code to the community to support future works in this area
 
 ### Requirements:
-In order to run this project you need the following:
+The code uses the following:
 * Matlab.
-* [PointNet](https://github.com/charlesq34/pointnet), please refer to the original code for information about running their code.
+* [PointNet](https://github.com/charlesq34/pointnet).
 
-We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification of the given object from the extracted planar data. 
+We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification using the extracted planar data. 
 
 
 ### Usage
@@ -71,6 +71,9 @@ While for testing, we used the test data with the following properties:
 ```
 distance threshold 0.08,  normal threshold 0.3
 ```
+
+### Acknowledgement
+We used [PointNet](https://github.com/charlesq34/pointnet) with slight modifications mentioned above.
 
 ### License
 This repository is released under MIT License.
