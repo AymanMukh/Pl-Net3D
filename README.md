@@ -7,6 +7,10 @@
 }
 ```
 
+
+![main](https://github.com/charlesq34/pointnet/blob/master/doc/teaser.png)
+
+
 ### Introduction
 
 Three-dimensional point clouds produced by 3D scanners are often noisy and contains
