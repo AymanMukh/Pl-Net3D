@@ -8,7 +8,7 @@
 ```
 
 
-![main pic](architicture.png){:height="50%" width="50%"}
+![main pic](architicture.png)
 
 
 ### Introduction
