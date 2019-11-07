@@ -8,7 +8,7 @@
 ```
 
 
-![main](https://drive.google.com/open?id=1Voyp0JSC5uMY2osxXPzPLupOSpB0-52H)
+![main](https://drive.google.com/open?id=1Voyp0JSC5uMY2osxXPzPLupOSpB0-52H){:height="50%" width="50%"}
 
 
 ### Introduction
