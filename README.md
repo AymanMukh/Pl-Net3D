@@ -31,7 +31,7 @@ We provide the code to the community to support future works in this area
 ### Requirements:
 The code uses the following:
 * Matlab.
-* [PointNet](https://github.com/charlesq34/pointnet).
+* [PointNet](https://github.com/charlesq34/pointnet). The code was tested with python 3.6 and tensorflow 1.10. However the code can run on python 2.7 and older tensorflow versions. 
 
 We used matlab for the extraction of planar primitives from a given point cloud, while we used PointNet for classification using the extracted planar data. 
 
