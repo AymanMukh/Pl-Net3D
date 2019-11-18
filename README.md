@@ -53,10 +53,10 @@ And then run the file 'convert_h5_m.m' to convert the h5 files to .m files, one 
 
 #### Extracting planar geometris
 
-After obtaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it will generate one testing and one training h5 files which will be used as an input to PointNet. //
-The thersholds can be modified at line 37 from the 'processdata.m' file.
-The max number of planes can be modified at line 63 from the 'processdata.m' file.
-Augmentation can be achieved by modifying line 47 to 50 in main.m file
+After obtaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it will generate one testing and one training h5 files which will be used as an input to PointNet. <br/>
+The thersholds can be modified at line 37 from the 'processdata.m' file. <br/>
+The max number of planes can be modified at line 63 from the 'processdata.m' file. <br/>
+Augmentation can be achieved by modifying line 47 to 50 in main.m file <br/>
 
 #### Using the extracted planar geometris in PoinNet
 
