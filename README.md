@@ -64,19 +64,18 @@ After obtaining the training and testing h5 files from the above step, add thier
 ```
 python train.py
 ```
+#### Robustness tests
 
-To achieve similar results as reported in the paper, three sets of the training data should be generated with the following properties:
+To train the network to achieve better robustness against data augmentation, we used three sets of the training data with the following properties:
 ```
 distance threshold 0.08,  normal threshold 0.3
 distance threshold 0.08,  normal threshold 0.1
 distance threshold 0.08,  normal threshold 0.3, at noise level of 0.01
 ```
-While for testing, we used the test data with the following properties:
+While the threshold values for the testing data was not changed:
 ```
 distance threshold 0.08,  normal threshold 0.3
 ```
-
-
 
 
 ### Acknowledgement
