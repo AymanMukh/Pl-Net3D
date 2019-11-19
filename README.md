@@ -13,20 +13,7 @@
 
 ### Introduction
 
-Three-dimensional point clouds produced by 3D scanners are often noisy and contains
-outliers. Such data inaccuracies can significantly affect the recent deep learning based methods and reduce
-their ability to classify objects. Most deep neural network based object classification methods were tested on
-clean data and their robustness to the existence of data inaccuracies has not been examined. In this paper, we
-show that these methods, despite their good performances on clean data, fail to achieve good classification
-accuracy even with low levels of noise and outliers. We also propose a new method, using an existing
-network, to robustify the object classification task. The proposed method uses planar patches to robustly
-model the object’s geometry. The information of planar segments are then fed into a deep neural network for
-classification. The method is based on using the PointNet deep learning architecture. We tested our method
-against several kinds of data inaccuracies such as scattered outliers, clustered outliers, noise, and missing
-points. The proposed method showed good performance in the presence of these inaccuracies compared to
-state-of-the-art techniques. By decomposing objects into planes, the suggested method is simple, fast, yet
-able to provide good classification accuracy, and can handle different kinds of point cloud data inaccuracies.
-We provide the code to the community to support future works in this area
+Three-dimensional point clouds produced by 3D scanners are often noisy and contain outliers. Such data inaccuracies can significantly affect current deep learning-based methods and reduce their ability to classify objects. Most deep neural networks-based object classification methods were targeted to achieve high classification accuracy without considering classification robustness. Thus, despite their great success, they still fail to achieve good classification accuracy with low levels of noise and outliers. This work is carried out to develop a robust network structure that can solidly identify objects. The proposed method uses patches of planar segments, which can robustly capture object appearance. The planar segments information are then fed into a deep neural network for classification. We base our approach on the PointNet deep learning architecture. Our method was tested against several kinds of data inaccuracies such as scattered outliers, clustered outliers, noise and missing points. The proposed method shows excellent performance in the presence of these inaccuracies compared to state-of-the-art techniques. By decomposing objects into planes, the suggested method is simple, fast, provides good classification accuracy and can handle different kinds of point cloud data inaccuracies.
 
 ### Requirements:
 The code uses the following:
