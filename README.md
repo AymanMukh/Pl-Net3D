@@ -3,8 +3,18 @@
 
 ### Citation
 ```
-@misc{
-}
+@ARTICLE{8895750,
+author={A. {Mukhaimar} and R. {Tennakoon} and C. Y. {Lai} and R. {Hoseinnezhad} and A. {Bab-Hadiashar}},
+journal={IEEE Access},
+title={PL-Net3d: Robust 3D Object Class Recognition Using Geometric Models},
+year={2019},
+volume={7},
+number={},
+pages={163757-163766},
+keywords={Object recognition;point cloud classification;primitive fitting;robust classification},
+doi={10.1109/ACCESS.2019.2952638},
+ISSN={2169-3536},
+month={},}
 ```
 
 
