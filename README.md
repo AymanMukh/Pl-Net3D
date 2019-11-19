@@ -53,7 +53,7 @@ And then run the file 'convert_h5_m.m' to convert the h5 files to .m files, one 
 After obtaining the .m files from the above step, run the main.m file to extract planar geometries from objects. After the codes finish, it will generate one testing and one training h5 files which will be used as an input to PointNet. <br/><br/>
 The thersholds can be modified at line 37 from the 'processdata.m' file. <br/>
 The max number of planes can be modified at line 63 from the 'processdata.m' file. <br/>
-Augmentation can be achieved by modifying line 47 to 50 in main.m file <br/>
+Augmentation can be achieved by modifying line 47 to 50 in main.m file. <br/>
 
 #### Using the extracted planar geometris in PoinNet
 
@@ -79,9 +79,9 @@ distance threshold 0.08,  normal threshold 0.3
 We used [PointNet](https://github.com/charlesq34/pointnet) with the following modifications:
 
 * The number of points in PointNet is set to the number of planes (20 default).
-* Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py': The placeholder_inputs class, the size should be set to 11 instead of 3. In the get_model class, The size of the fist conv2d is set to 11 instead of 3
-* The rotate data classes in provider.py is modified   
-* The 'jitter_point' command in the training file is not required ( jittering is performed in matlab.)
+* Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py': The placeholder_inputs class, the size should be set to 11 instead of 3. In the get_model class, The size of the fist conv2d is set to 11 instead of 3.
+* The rotate data classes in provider.py is modified.   
+* The 'jitter_point' command in the training file is not required ( jittering is performed in matlab).
 
 ### License
 This repository is released under MIT License.
