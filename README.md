@@ -57,7 +57,7 @@ Augmentation can be achieved by modifying line 47 to 50 in main.m file <br/>
 
 #### Using the extracted planar geometris in PoinNet
 
-After obtaining the training and testing h5 files from the above step, add thier path to the text files in pointnet/data/modelnet40_ply_hdf5_2048. Then run the train file in pointnet folder:
+After obtaining the training and testing h5 files from the above step, add thier path to the text files in pointnet/data/modelnet40_ply_hdf5_2048. Then run the training file in pointnet folder:
 ```
 python train.py
 ```
