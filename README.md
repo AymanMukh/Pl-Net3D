@@ -71,7 +71,7 @@ We used [PointNet](https://github.com/charlesq34/pointnet) with the following mo
 * The number of points in PointNet is set to the number of planes (20 default).
 * Each planar geometiry is represneted by a vector of size 11 (default), therefore in 'pointnet_cls.py': The placeholder_inputs class, the size should be set to 11 instead of 3. In the get_model class, The size of the fist conv2d is set to 11 instead of 3
 * The rotate data classes in provider.py is modified   
-* The 'jitter_point' command in the training file is not required ( jittering is done in the matlab part.)
+* The 'jitter_point' command in the training file is not required ( jittering is performed in matlab.)
 
 ### License
 This repository is released under MIT License.
