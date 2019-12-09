@@ -1,19 +1,6 @@
 # PL-Net3D: Robust 3D Object Class Recognition Using Geometric Models
 
 
-### Citation
-```
-@ARTICLE{8895750,
-author={A. {Mukhaimar} and R. {Tennakoon} and C. Y. {Lai} and R. {Hoseinnezhad} and A. {Bab-Hadiashar}},
-journal={IEEE Access},
-title={PL-Net3d: Robust 3D Object Class Recognition Using Geometric Models},
-year={2019},
-volume={7},
-pages={163757-163766},
-doi={10.1109/ACCESS.2019.2952638},
-ISSN={2169-3536}}
-```
-
 
 ![main pic](architicture.png)
 
@@ -72,6 +59,18 @@ While the threshold values for the testing data was not changed:
 distance threshold 0.08,  normal threshold 0.3
 ```
 
+### Citation
+```
+@ARTICLE{8895750,
+author={A. {Mukhaimar} and R. {Tennakoon} and C. Y. {Lai} and R. {Hoseinnezhad} and A. {Bab-Hadiashar}},
+journal={IEEE Access},
+title={PL-Net3d: Robust 3D Object Class Recognition Using Geometric Models},
+year={2019},
+volume={7},
+pages={163757-163766},
+doi={10.1109/ACCESS.2019.2952638},
+ISSN={2169-3536}}
+```
 
 ### Acknowledgement
 We used [PointNet](https://github.com/charlesq34/pointnet) with the following modifications:
