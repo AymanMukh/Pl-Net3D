@@ -7,7 +7,7 @@
 clear
 close all
 
-addpath('./utils','./moduls','./data');
+addpath('./utils','./data');
 
  %% training data
  
